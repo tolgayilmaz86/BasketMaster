@@ -3,7 +3,7 @@ Basket Master v0.3
 
 An open source basketball game uses Gameplay3d engine, which will use the gyro in android version so the real shoot position will apply.
 
-<img src="[https://raw.github.com/tolgamyth/basketmaster/master/res/bm_screenshot.png](https://github.com/tolgayilmaz86/BasketMaster/blob/main/res/bm_screenshot.png)" width=640 height=398>
+<img src="https://github.com/tolgayilmaz86/BasketMaster/blob/main/res/bm_screenshot.png" width=640 height=398>
 
 Overview
 --------
