@@ -1,0 +1,56 @@
+scene
+{
+    path = res/design/basketmaster.gpb
+    activeCamera = Camera
+
+    node Background
+    {
+        material = res/design/basketmaster.material#Background__BackGroundTex
+        collisionObject = res/design/basketmaster.physics#Background
+    }
+
+    node Court
+    {
+        material = res/design/basketmaster.material#Court__CourtTex
+        collisionObject = res/design/basketmaster.physics#Court
+    }
+
+    node Grass
+    {
+        material = res/design/basketmaster.material#Grass__GrassTex
+        collisionObject = res/design/basketmaster.physics#Grass
+    }
+
+    node Basketball
+    {
+        material = res/design/basketmaster.material#Basketball__BasketballTex
+        collisionObject = res/design/basketmaster.physics#Basketball
+        tags
+        {
+            dynamic
+        }
+    }
+
+    node Scoreboard
+    {
+        material = res/design/basketmaster.material#Scoreboard__ScoreboardTex
+        collisionObject = res/design/basketmaster.physics#Scoreboard
+    }
+
+    node Hoop
+    {
+        material = res/design/basketmaster.material#Hoop__HoopTex
+        collisionObject = res/design/basketmaster.physics#Hoop
+    }
+
+    node Pot
+    {
+        material = res/design/basketmaster.material#Material__PotTex_png
+        collisionObject = res/design/basketmaster.physics#Pot
+    }
+
+    node Score
+    {
+        collisionObject = res/design/basketmaster.physics#Score
+    }
+}

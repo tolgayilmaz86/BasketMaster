@@ -1,0 +1,45 @@
+material lighting
+{
+technique directionalBumped
+    {
+        pass 0
+        {
+            // shaders
+            vertexShader = res/shaders/textured.vert
+            fragmentShader = res/shaders/textured.frag
+            defines = TEXTURE_REPEAT;BUMPED;DIRECTIONAL_LIGHT_COUNT 1
+            
+            // uniforms
+            u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+            u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+
+            // samplers
+            sampler u_diffuseTexture
+            {
+                path = res/png/basketballCourtTex.png
+                mipmap = true
+                wrapS = REPEAT
+                wrapT = REPEAT
+                minFilter = NEAREST_MIPMAP_LINEAR
+                magFilter = LINEAR
+            }
+            
+            sampler u_normalmapTexture
+            {
+                path = res/png/basketballCourtTexn.png
+                mipmap = true
+                wrapS = REPEAT
+                wrapT = REPEAT
+                minFilter = NEAREST_MIPMAP_LINEAR
+                magFilter = LINEAR
+            }
+
+            // render state
+            renderState
+            {
+                cullFace = true
+                depthTest = true
+            }
+        }
+    }
+}

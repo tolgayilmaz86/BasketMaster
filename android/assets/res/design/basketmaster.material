@@ -1,0 +1,153 @@
+
+material colored
+{
+    technique
+    {
+        pass
+        {
+            vertexShader = res/shaders/colored.vert
+            fragmentShader = res/shaders/colored.frag
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+            
+            // uniforms
+            u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+            u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+            
+            renderState
+            {
+                cullFace = true
+                depthTest = true
+            }
+        }
+    }
+}
+
+material textured
+{
+    u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        mipmap = true
+        wrapS = CLAMP
+        wrapT = CLAMP
+        minFilter = LINEAR_MIPMAP_LINEAR
+        magFilter = LINEAR
+    }
+
+    renderState
+    {
+        cullFace = true
+        depthTest = true
+    }
+    
+    technique
+    {
+        pass 
+        {
+            vertexShader = res/shaders/textured.vert
+            fragmentShader = res/shaders/textured.frag
+        }
+    }
+}
+
+material Background__BackGroundTex : textured
+{
+    u_ambientColor = 1, 1, 1
+    
+    sampler u_diffuseTexture
+    {
+        path = res/png/bgTex.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+}
+
+material Basketball__BasketballTex : textured
+{
+    u_ambientColor = 1, 1, 1
+    
+    sampler u_diffuseTexture
+    {
+        path = res/png/BasketballTex.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+}
+
+material Court__CourtTex : textured
+{
+    u_ambientColor = 1, 1, 1
+    
+    sampler u_diffuseTexture
+    {
+        path = res/png/basketballCourtTex.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+}
+
+material Grass__GrassTex : textured
+{
+    u_ambientColor = 1, 1, 1
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        path = res/png/grassTex.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+}
+
+material Hoop__HoopTex : textured
+{
+    u_ambientColor = 1, 1, 1
+    
+    sampler u_diffuseTexture
+    {
+        path = res/png/HoopTex.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+}
+
+material Scoreboard__ScoreboardTex : textured
+{
+    u_ambientColor = 1, 1, 1
+    
+    sampler u_diffuseTexture
+    {
+        path = res/png/scoreboardTex.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+}
+
+material Material__PotTex_png : textured
+{
+    u_ambientColor = 1, 1, 1
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        path = res/png/PotTex.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+}
+
+material Net__NetTex_png : textured
+{
+    u_ambientColor = 1, 1, 1
+    u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+    
+    sampler u_diffuseTexture
+    {
+        path = res/png/NetTex.png
+        wrapS = REPEAT
+        wrapT = REPEAT
+    }
+
+}
+

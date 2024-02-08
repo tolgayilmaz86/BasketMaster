@@ -1,0 +1,79 @@
+collisionObject Basketball
+{
+    type = RIGID_BODY
+    shape = SPHERE
+    mass = 0.5
+    friction = 0.8
+    restitution = 0.8
+    linearDamping = 0.1
+    angularDamping = 0.5
+}
+
+collisionObject Background
+{
+    type = RIGID_BODY
+    shape = MESH
+    mass = 0.0
+    extents = 36.23, 1, 1
+    kinematic = false
+    linearFactor = 1, 1, 1
+    angularFactor = 1, 1, 1
+    friction = 0.1
+    restitution = 0.8
+    anisotropicFriction = 1, 1, 1
+}
+
+
+collisionObject Court
+{
+    type = RIGID_BODY
+    shape = MESH
+    mass = 0.0
+    extents = 36.23, 1, 1
+    kinematic = false
+    friction = 0.6
+    restitution = 0.8
+    anisotropicFriction = 1, 1, 1
+}
+
+collisionObject Grass
+{
+    type = RIGID_BODY
+    shape = MESH
+    mass = 0.0
+    extents = 36.23, 1, 1
+    kinematic = false
+    linearFactor = 1, 1, 1
+    angularFactor = 1, 1, 1
+    friction = 0.8
+    restitution = 0.4
+    anisotropicFriction = 1, 1, 1
+}
+
+collisionObject Pot
+{
+    type = RIGID_BODY
+    shape = MESH
+    mass = 0.0
+    friction = 0.1
+    restitution = 0
+}
+
+collisionObject Hoop
+{
+    type = RIGID_BODY
+    shape = MESH
+    mass = 0.0
+    extents = 36.23, 1, 1
+    kinematic = false
+    friction = 0.8
+    restitution = 0.2
+    anisotropicFriction = 1, 1, 1
+}
+
+collisionObject Score
+{
+    type = GHOST_OBJECT
+    shape = MESH
+    mass = 0.0
+}
